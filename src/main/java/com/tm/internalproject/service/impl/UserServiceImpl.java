@@ -52,6 +52,7 @@ public class UserServiceImpl implements UserService {
 	 * @param loginRequest
 	 * @return TokenResponsePOJO
 	 */
+	@Override
 	public TokenResponsePOJO generateToken(LoginRequest loginRequest) {
 		logger.info("Received the request to generate the access and refresh token");
 
@@ -109,6 +110,7 @@ public class UserServiceImpl implements UserService {
 	 * @param loginRequest
 	 * @return boolean
 	 */
+	@Override
 	public boolean checkEmailExistorNot(LoginRequest loginRequest) {
 		logger.info("Received the request to request email is exist or not in database");
 		boolean isEmailExist = false;
@@ -136,6 +138,7 @@ public class UserServiceImpl implements UserService {
 	 * @param loginRequest
 	 * @return boolean
 	 */
+	@Override
 	public boolean checkEmailAndPasswordExistOrNot(LoginRequest loginRequest) {
 		logger.info("Received the request to request email and password is exist or not in database");
 		boolean isEmailAndPasswordExist = false;

@@ -56,7 +56,7 @@ public class UserController {
 			if (Boolean.TRUE.equals(responsePojo.getIsSuccess())) {
 				TokenResponsePOJO tokenResponse = userService.generateToken(loginRequest);
 				if (tokenResponse!=null) {
-					logger.info("Get the tokenResponse and set to responsepojo object");
+					logger.info("Get the tokenResponse and set to responsePojo object");
 					responsePojo.response("Token are generated", tokenResponse, true);
 				} else {
 					logger.info("Get the tokenResponse and set to responsepojo object");
@@ -95,7 +95,7 @@ public class UserController {
 			if (userService.checkEmailExistorNot(loginRequest)) {
 				logger.info("Given email is valid email");
 				if (userService.checkEmailAndPasswordExistOrNot(loginRequest)) {
-					logger.info("Given email is valid email");
+					logger.info("Given password is valid");
 					responsePojo.response("Given password is valid", null, true);
 				} else {
 					logger.error("Please enter the correct password");

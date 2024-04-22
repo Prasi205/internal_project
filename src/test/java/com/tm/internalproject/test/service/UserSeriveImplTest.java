@@ -345,7 +345,7 @@ class UserSeriveImplTest {
 	}
 
 	@Test
-	void testGenerateTokenResponse_InvalidJsonFormat() throws Exception {
+	void testGenerateTokenInvalidJsonFormat() throws Exception {
 		userServiceImpl = new UserServiceImpl();
 		userRepository = mock(UserRepository.class);
 		restTemplate = mock(RestTemplate.class);
@@ -377,9 +377,8 @@ class UserSeriveImplTest {
 		userDetails.setUniqueId(uniqueId);
 
 		when(userRepository.findByEmail(email)).thenReturn(userDetails);
-
-		Object invalidResponse = new Object();
-		when(restTemplate.postForObject(anyString(), any(), any())).thenReturn(invalidResponse);
+		
+		when(restTemplate.postForObject(anyString(), any(), any())).thenReturn(new Object());
 
 		LoginRequest loginRequest = new LoginRequest();
 		loginRequest.setEmail(email);
